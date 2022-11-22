@@ -19,7 +19,11 @@ const createdShapesArray = [];
 
 
 onEvent('click', createBtn, () => {
-  createShape(colourInput.value, shapeInput.value)
+  if (createdShapesArray.length >= 24) {
+    infoReturn.innerText = "The Factory is full";
+  } else {
+    createShape(colourInput.value, shapeInput.value)
+  }
 });
 
 function createShape(colour, shape) {
@@ -32,17 +36,17 @@ function displayShape(obj) {
   let shape = obj.getShape();
   let colour = obj.getColour();
   let newElement = document.createElement('div');
-  newElement.classList.add(`shape`);
-  newElement.classList.add(shape);
-  newElement.classList.add(colour);
-  factory.append(newElement);
+  newElement.classList = `shape ${shape} ${colour}`;
+  // newElement.style.backgroundColour = colour;
   onEvent('click', newElement, () => {
     showInfo(obj)
   })
+
+  factory.append(newElement);
 }
 
 
-  function showInfo(obj) {
-    let n = createdShapesArray.indexOf(obj)
-    infoReturn.innerText = `Unit ${n + 1} ${obj.getInfo()}`
-  }
+function showInfo(obj) {
+  let n = createdShapesArray.indexOf(obj)
+  infoReturn.innerText = `Unit ${n + 1}: ${obj.getInfo()}`
+}

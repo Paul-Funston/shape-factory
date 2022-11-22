@@ -9,16 +9,18 @@
 class Shape {
 
   constructor(colour, shape) {
-    this.colour = colour;
-    this.shape = shape;
+    this._colour = colour;
+    this._name = shape;
   }
 
   getColour() {
+    this.colour = this._colour;
     return this.colour;
   }
 
   getShape() {
-    return this.shape;
+    this.name = this._name;
+    return this._name;
   }
 
   getInfo() {
