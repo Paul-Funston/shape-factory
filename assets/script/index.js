@@ -42,7 +42,6 @@ function displayShape(obj) {
 }
 
 
-
   function showInfo(obj) {
     let n = createdShapesArray.indexOf(obj)
     infoReturn.innerText = `Unit ${n + 1} ${obj.getInfo()}`
