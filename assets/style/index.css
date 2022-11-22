@@ -1,0 +1,119 @@
+@layer reset, default, component;
+
+@import "./reset.css" layer(reset);
+
+:root {
+  --app-blue: #09f;
+  --app-green: #9f0;
+  --app-orange: #f90;
+  --app-pink: #f09;
+  --app-purple: #90f;
+
+  --app-dark-bg: #223;
+}
+
+@layer default {
+  body {
+    background-color: var(--app-dark-bg) ;
+  }
+
+  * {
+    color: #eee;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+
+  .wrapper {
+    min-height: 100vh;
+  }
+
+  .container {
+    margin-inline: auto;
+    width: 80vw;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  select, .factory {
+    background-color: #282838; 
+  }
+
+  form {
+    width: 600px;
+  }
+
+  select, input[type="button"] {
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  select {
+    width: 225px;
+    text-align: left;
+  }
+
+  select:nth-of-type(2) {
+    margin: 0 7px;
+  }
+
+  input[type="button"] {
+    width: 125px;
+    background-color: var(--app-blue);
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+  }
+
+  input[type="button"]:hover {
+    background-color: var(--app-green);
+    color: #223;
+  }
+
+  .factory {
+    padding: 10px;
+    height: 400px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    border-radius: 4px;
+  }
+
+}
+
+@layer component {
+  .shape {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .shape:hover {
+    border: #eee 1px solid;
+  }
+
+  .shape.blue { background-color: var(--app-blue);}
+
+  .shape.green { background-color: var(--app-green);}
+
+  .shape.orange { background-color: var(--app-orange);}
+
+  .shape.purple { background-color: var(--app-purple);}
+
+  .shape.pink { background-color: var(--app-pink);}
+
+  .shape.circle { border-radius: 50%; }
+}
