@@ -15,3 +15,4 @@ const colourInput = select('.colour-select');
 const createBtn = select('.create-btn');
 const factory = select('.factory');
 const infoReturn = select('.info');
+const madeShapes = selectAll('.shape');
