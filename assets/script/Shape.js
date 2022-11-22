@@ -8,9 +8,9 @@
 
 class Shape {
 
-  constructor(shape, colour) {
-    this.shape = shape;
+  constructor(colour, shape) {
     this.colour = colour;
+    this.shape = shape;
   }
 
   getColour() {
