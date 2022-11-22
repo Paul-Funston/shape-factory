@@ -18,19 +18,15 @@ class Shape {
     return this.colour;
   }
 
-  getShape() {
+  getName() {
     this.name = this._name;
     return this._name;
   }
 
   getInfo() {
-    return `${this.getColour()} ${this.getShape()}`
+    return `${this.getColour()} ${this.getName()}`
   }
 
 }
 
 export {Shape};
-
-// const shape = new Shape('circle', 'pink');
-
-// console.log(shape.getInfo());

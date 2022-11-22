@@ -101,7 +101,11 @@
     height: 100%;
     width: 100%;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    animation-name: grow;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+
   }
 
   .shape:hover {
@@ -119,4 +123,13 @@
   .shape.pink { background-color: var(--app-pink);}
 
   .shape.circle { border-radius: 50%; }
+
+  @keyframes grow { 
+    0% {height: 0 ; width: 0 ;}
+    25% {height: 15% ; width: 15% ;}
+    50% {height: 40% ; width: 40% ;}
+    75% {height: 75% ; width: 75% ;}
+    90% {height: 110% ; width: 110% ;}
+    100% {height: 100% ; width: 100% ;}
+  }
 }

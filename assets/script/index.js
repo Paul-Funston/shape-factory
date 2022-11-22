@@ -33,7 +33,7 @@ function createShape(colour, shape) {
 }
 
 function displayShape(obj) {
-  let shape = obj.getShape();
+  let shape = obj.getName();
   let colour = obj.getColour();
   let newElement = document.createElement('div');
   newElement.classList = `shape ${shape} ${colour}`;
