@@ -17,7 +17,6 @@ const factory = select('.factory');
 const infoReturn = select('.info');
 const createdShapesArray = [];
 
-
 onEvent('click', createBtn, () => {
   if (createdShapesArray.length >= 24) {
     infoReturn.innerText = "The Factory is full";
@@ -44,7 +43,6 @@ function displayShape(obj) {
 
   factory.append(newElement);
 }
-
 
 function showInfo(obj) {
   let n = createdShapesArray.indexOf(obj)
